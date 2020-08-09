@@ -1,0 +1,19 @@
+.card-footer {
+    padding: 0;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.stick {
+    position: sticky;
+}
+
+.sticky-top {
+    top: 80px;
+}
+
+.btn-block {
+    margin: 0;
+}

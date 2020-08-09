@@ -1,0 +1,41 @@
+<h1>
+    Shipping
+</h1>
+
+<div class="row">
+    <div class="col-7">
+        <form #ship="ngForm" (submit)="placeOrder(ship)" action="">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input placeholder="Name" #name="ngModel" ngModel class="form-control" name="Name" id="Name" type="text" required>
+                <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+                    Name is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="AddressLine1">Address</label>
+                <input placeholder="Line1" #line1="ngModel" ngModel class="form-control" name="AddressLine1" id="address1" type="text" required>
+                <div class="alert alert-danger" *ngIf="line1.touched && line1.invalid">
+                    Address line 1 is required.
+                </div>
+                <br>
+            </div>
+            <div class="form-group">
+
+                <input placeholder="Line2" #line2="ngModel" ngModel class="form-control" name="AddressLine2" id="address2" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="City">City</label>
+                <input placeholder="City" #city="ngModel" ngModel class="form-control" name="City" id="City" type="text" required>
+                <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
+                    City is required.
+                </div>
+            </div>
+            <button [disabled]="!ship.valid" class="btn btn-primary">Place Order</button>
+        </form>
+    </div>
+    <div class="col-5">
+        <app-shopping-cart-summary></app-shopping-cart-summary>
+    </div>
+</div>
